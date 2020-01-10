@@ -57,4 +57,16 @@ public class Register_Page {
 		element = driver.findElement(By.name("state_/_province_/_regionRegisterPage"));
 		return element;
 	}
+	public static WebElement txtbox_CodePage(WebDriver driver) {
+		element = driver.findElement(By.name("postal_codeRegisterPage"));
+		return element;
+	}
+	public static WebElement checkbox_Agree(WebDriver driver) {
+		element = driver.findElement(By.name("i_agree"));
+		return element;
+	}
+	public static WebElement btn_Fined(WebDriver driver) {
+		element = driver.findElement(By.id("register_btnundefined"));
+		return element;
+	}
 }
