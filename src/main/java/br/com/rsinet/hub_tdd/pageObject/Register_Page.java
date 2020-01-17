@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class Register_Page {
 	private static WebElement element;
-
+	
 	public static WebElement txtbox_UserName(WebDriver driver) {
 		element = driver.findElement(By.name("usernameRegisterPage"));
 		return element;
@@ -64,9 +64,18 @@ public class Register_Page {
 	public static WebElement checkbox_Agree(WebDriver driver) {
 		element = driver.findElement(By.name("i_agree"));
 		return element;
+		
 	}
 	public static WebElement btn_Fined(WebDriver driver) {
 		element = driver.findElement(By.id("register_btnundefined"));
 		return element;
 	}
+	public static String capturarTexto(WebDriver driver) throws Exception {
+		Thread.sleep(500);
+		WebElement textoCapture = driver.findElement(By.xpath("//*[@id=\\\"menuUserLink\\\"]/span"));
+		String textoUsuarioLogado = textoCapture.getText();
+		return textoUsuarioLogado;
+	}
+
+	
 }
