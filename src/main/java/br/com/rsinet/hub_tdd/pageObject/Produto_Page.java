@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 public class Produto_Page {
 
 	public static WebElement element;
-	
+
 	public static WebDriver driver;
 
 	public static WebElement lupa(WebDriver driver) {
@@ -25,21 +25,13 @@ public class Produto_Page {
 		return element;
 
 	}
-	
+
 	public static WebElement Erro(WebDriver driver) {
 		element = driver.findElement(By.xpath("//*[@id=\"searchPage\"]/div[3]/div/label/span"));
 		return element;
 	}
-	
-//	public static void esperaImagem() {
-//		
-//	   
-//		WebDriverWait wait = new WebDriverWait(driver, 4);
-//	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"searchPage\"]/div[3]/div/label/span")));
-//	   
-//	}
 
-	// Pesquisar Produto por Categoria na tela de inicio 
+	// Pesquisar Produto por Categoria na tela de inicio
 
 	public static WebElement Pesquisar(WebDriver driver, String categoria) {
 		element = driver.findElement(By.id(categoria));
@@ -52,5 +44,19 @@ public class Produto_Page {
 
 	}
 
-}
+// Pesquisar Produto Erro por Categoria tela inicio 
 
+	public static WebElement Quantidade(WebDriver driver) {
+		element = driver.findElement(By.name("quantity"));
+		return element;
+
+	}
+
+	public static WebElement Comprar(WebDriver driver) {
+		element = driver.findElement(By.name("save_to_cart"));
+		return element;
+
+	}
+	
+
+}

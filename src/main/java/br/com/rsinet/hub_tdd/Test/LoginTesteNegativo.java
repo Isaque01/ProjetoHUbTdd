@@ -4,8 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.After;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
 
 import br.com.rsinet.hub_tdd.Util.Constant;
 import br.com.rsinet.hub_tdd.Util.ExcelUtilsTest;
@@ -64,7 +64,7 @@ public class LoginTesteNegativo {
 
 	}
 
-	@After
+	@AfterMethod
 	public void finaliza_teste() throws InterruptedException {
 		IniciarDriver.fecharDriver(driver);
 	

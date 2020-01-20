@@ -1,11 +1,12 @@
 package br.com.rsinet.hub_tdd.Test;
 
-import java.util.concurrent.TimeUnit;
-
-import org.junit.After;
-import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
 
 import br.com.rsinet.hub_tdd.Util.Constant;
 import br.com.rsinet.hub_tdd.Util.ExcelUtilsTest;
@@ -26,29 +27,20 @@ public class BuscaProdutoSucesso {
 		ExcelUtilsTest.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha2");
 
 		Produto_Page.AutoComplete(driver).sendKeys(ExcelUtilsTest.getCellData(1, 0) + Keys.ENTER);
-       
-		
-		
+
 		Produto_Page.Selecionar(driver, ExcelUtilsTest.getCellData(2, 0)).click();
 
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 
-//		IniciarDriver.esperaImagem();
-		
-		//Tentei de todoas as forma de comando de espera só execulta o print no lugar correto com o comando ThreadSleep.
-		
-		Thread.sleep(2000);
-		
-		//IniciarDriver.esperaImagem();
-		
-		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-		
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=\"mainImg\"]")));
+
 		Screenshot.printTela(driver, Generator.dataHorParaArquvio());
 
 	}
 
-	@After
+	@AfterMethod
 	public void finaliza_teste() throws Exception {
-		
+
 		IniciarDriver.fecharDriver(driver);
 	}
 

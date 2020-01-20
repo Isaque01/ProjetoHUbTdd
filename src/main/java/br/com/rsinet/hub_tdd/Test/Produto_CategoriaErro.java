@@ -1,8 +1,9 @@
 package br.com.rsinet.hub_tdd.Test;
 
-import org.junit.After;
-import org.junit.Test;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
 
 import br.com.rsinet.hub_tdd.Util.Constant;
 import br.com.rsinet.hub_tdd.Util.ExcelUtilsTest;
@@ -11,7 +12,7 @@ import br.com.rsinet.hub_tdd.Util.IniciarDriver;
 import br.com.rsinet.hub_tdd.Util.Screenshot;
 import br.com.rsinet.hub_tdd.pageObject.Produto_Page;
 
-public class Produto_CategoriaTest {
+public class Produto_CategoriaErro {
 
 	static WebDriver driver;
 
@@ -25,19 +26,22 @@ public class Produto_CategoriaTest {
 		Produto_Page.Pesquisar(driver, ExcelUtilsTest.getCellData(1, 0)).click();
 
 		Produto_Page.Produto(driver, ExcelUtilsTest.getCellData(2, 0)).click();
-		
-		//Tentei de todoas as forma de comando de espera só execulta o print no lugar correto com o comando ThreadSleep.
-		Thread.sleep(2000);
-		
+
+		Produto_Page.Quantidade(driver).sendKeys("1");
+
+		Produto_Page.Comprar(driver).click();
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		// Vertical scroll - down by 150 pixels
+		js.executeScript("window.scrollBy(0,150)");
+
 		Screenshot.printTela(driver, Generator.dataHorParaArquvio());
-		
+
 	}
 
-	@After
+	@AfterMethod
 	public void finaliza_teste() throws Exception {
 
-		IniciarDriver.fecharDriver(driver);
+		 //IniciarDriver.fecharDriver(driver);
 	}
 }
-
-

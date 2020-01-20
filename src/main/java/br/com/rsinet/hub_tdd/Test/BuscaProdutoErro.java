@@ -1,12 +1,14 @@
 package br.com.rsinet.hub_tdd.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
 
 import br.com.rsinet.hub_tdd.Util.Constant;
 import br.com.rsinet.hub_tdd.Util.ExcelUtilsTest;
@@ -31,18 +33,17 @@ public class BuscaProdutoErro {
 
 		assertEquals(Produto_Page.Erro(driver).getText().contains(ExcelUtilsTest.getCellData(4, 0)), true);
 
-//		IniciarDriver.esperaImagem();
-		
-		//Tentei de todoas as forma de comando de espera só execulta o print no lugar correto com o comando ThreadSleep.
-		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("virtualFooter")));
+		assertTrue(driver.getPageSource().contains("No results for"));
 
 		Screenshot.printTela(driver, Generator.dataHorParaArquvio());
+
 	}
 
-	@After
+	@AfterMethod
 	public void finaliza_teste() throws Exception {
 
 		IniciarDriver.fecharDriver(driver);
 	}
 }
-
