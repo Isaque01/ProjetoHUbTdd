@@ -2,20 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13211" started-at="2020-01-20T15:29:44 BRT" finished-at="2020-01-20T15:29:57 BRT">
+  <suite name="Default suite" duration-ms="16735" started-at="2020-01-21T17:49:18 BRT" finished-at="2020-01-21T17:49:35 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13211" started-at="2020-01-20T15:29:44 BRT" finished-at="2020-01-20T15:29:57 BRT">
-      <class name="br.com.rsinet.hub_tdd.Test.Produto_CategoriaErro">
-        <test-method status="PASS" signature="PesquisaProdutoCategoria()[pri:0, instance:br.com.rsinet.hub_tdd.Test.Produto_CategoriaErro@704a52ec]" name="PesquisaProdutoCategoria" duration-ms="13182" started-at="2020-01-20T15:29:44 BRT" finished-at="2020-01-20T15:29:57 BRT">
+    <test name="Default test" duration-ms="16735" started-at="2020-01-21T17:49:18 BRT" finished-at="2020-01-21T17:49:35 BRT">
+      <class name="br.com.rsinet.hub_tdd.Test.LoginTesteSucesso">
+        <test-method status="PASS" signature="iniciar()[pri:0, instance:br.com.rsinet.hub_tdd.Test.LoginTesteSucesso@5a1c0542]" name="iniciar" is-config="true" duration-ms="10860" started-at="2020-01-21T17:49:18 BRT" finished-at="2020-01-21T17:49:29 BRT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PesquisaProdutoCategoria -->
-        <test-method status="PASS" signature="finaliza_teste()[pri:0, instance:br.com.rsinet.hub_tdd.Test.Produto_CategoriaErro@704a52ec]" name="finaliza_teste" is-config="true" duration-ms="0" started-at="2020-01-20T15:29:57 BRT" finished-at="2020-01-20T15:29:57 BRT">
+        </test-method> <!-- iniciar -->
+        <test-method status="PASS" signature="CadastroPossitivo()[pri:0, instance:br.com.rsinet.hub_tdd.Test.LoginTesteSucesso@5a1c0542]" name="CadastroPossitivo" duration-ms="5198" started-at="2020-01-21T17:49:29 BRT" finished-at="2020-01-21T17:49:34 BRT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CadastroPossitivo -->
+        <test-method status="PASS" signature="finaliza_teste()[pri:0, instance:br.com.rsinet.hub_tdd.Test.LoginTesteSucesso@5a1c0542]" name="finaliza_teste" is-config="true" duration-ms="658" started-at="2020-01-21T17:49:34 BRT" finished-at="2020-01-21T17:49:35 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finaliza_teste -->
-      </class> <!-- br.com.rsinet.hub_tdd.Test.Produto_CategoriaErro -->
+      </class> <!-- br.com.rsinet.hub_tdd.Test.LoginTesteSucesso -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

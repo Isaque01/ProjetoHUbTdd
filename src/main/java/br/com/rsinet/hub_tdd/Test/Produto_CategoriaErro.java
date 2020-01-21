@@ -42,6 +42,6 @@ public class Produto_CategoriaErro {
 	@AfterMethod
 	public void finaliza_teste() throws Exception {
 
-		 //IniciarDriver.fecharDriver(driver);
+		 IniciarDriver.fecharDriver(driver);
 	}
 }

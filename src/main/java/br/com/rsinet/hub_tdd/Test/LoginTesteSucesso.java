@@ -57,9 +57,12 @@ public class LoginTesteSucesso {
 
 		wait.until(ExpectedConditions.visibilityOf(Home_Page.img_Speaker(driver)));
 
+		
 		assertEquals("http://www.advantageonlineshopping.com/#/", driver.getCurrentUrl());
 		
 		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(Home_Page.btn_Login(driver)));
 		
 		Screenshot.printTela(driver, Generator.dataHorParaArquvio());
 
